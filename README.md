@@ -138,7 +138,7 @@ Response:
 ```
 {
   "meta": <Meta>,
-  "data": [<Operation include Outlet>]
+  "data": [<Operation (includes outlet:Outlet)>]
 }
 ```
 
@@ -154,7 +154,7 @@ Response:
 ```
 {
   "meta": <Meta>,
-  "data": [<Operation include Outlet>]
+  "data": [<Operation (includes outlet:Outlet)>]
 }
 ```
 
