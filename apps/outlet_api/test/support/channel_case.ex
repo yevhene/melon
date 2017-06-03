@@ -27,9 +27,9 @@ defmodule Bonus.OutletAPI.Web.ChannelCase do
 
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Bonus.OutletAPI.Repo)
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Bonus.Domain.Repo)
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(Bonus.OutletAPI.Repo, {:shared, self()})
+      Ecto.Adapters.SQL.Sandbox.mode(Bonus.Domain.Repo, {:shared, self()})
     end
     :ok
   end

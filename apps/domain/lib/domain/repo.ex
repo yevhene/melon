@@ -1,5 +1,5 @@
-defmodule Bonus.OutletAPI.Repo do
-  use Ecto.Repo, otp_app: :outlet_api
+defmodule Bonus.Domain.Repo do
+  use Ecto.Repo, otp_app: :domain
 
   @doc """
   Dynamically loads the repository url from the

@@ -8,8 +8,6 @@ defmodule Bonus.OutletAPI.Application do
 
     # Define workers and child supervisors to be supervised
     children = [
-      # Start the Ecto repository
-      supervisor(Bonus.OutletAPI.Repo, []),
       # Start the endpoint when the application starts
       supervisor(Bonus.OutletAPI.Web.Endpoint, []),
       # Start your own worker by calling: Bonus.OutletAPI.Worker.start_link(arg1, arg2, arg3)

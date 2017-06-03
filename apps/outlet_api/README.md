@@ -1,19 +1,184 @@
 # Bonus.OutletAPI
 
-To start your Phoenix server:
+## Rules
+- All date/time fields formatted according to `RFC 3339`;
+- All texts use Markdown format;
+- All money related values measured in minor units (like `cents`).
 
-  * Install dependencies with `mix deps.get`
-  * Create and migrate your database with `mix ecto.create && mix ecto.migrate`
-  * Start Phoenix endpoint with `mix phx.server`
+## Definitions
+- `<Entity>` - Entity
+- `[<Entity>]` - List of Entities
+- `<Entity (includes subentity:<AnotherEntity>)>` - Entity with included *subentity* (of type AnotherEntity).
 
-Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
+## Entities
 
-Ready to run in production? Please [check our deployment guides](http://www.phoenixframework.org/docs/deployment).
+### Outlet
+Shop or department
+```
+{
+  "name": "Rainbow Shop",
+  "address": "Soborna 75, 3"
+}
+```
 
-## Learn more
+### Customer
+Customer can obtain bonuses for each company
+```
+{
+  "id": 1,
+  "name": "Vasyl Pupkin",
+  "email": "customer@example.com",
+  "phone": "+380123456789",
+  "code": "0987654321",
+  "bonuses": 123
+}
+```
 
-  * Official website: http://www.phoenixframework.org/
-  * Guides: http://phoenixframework.org/docs/overview
-  * Docs: https://hexdocs.pm/phoenix
-  * Mailing list: http://groups.google.com/group/phoenix-talk
-  * Source: https://github.com/phoenixframework/phoenix
+### Operation
+```
+{
+  "id": 2,
+  "bonuses": -12,
+  "reason": "Info for customer",
+  "info": "Info for trader",
+  "created_at": "1985-04-12T23:20:50.52Z"
+}
+```
+
+## Meta
+Metainformation:
+```
+{
+  "page": 1,
+  "perpage": 10,
+  "pages": 11,
+  "count": 103
+}
+```
+
+## Globals
+Each request should use this headers:
+X-Key: `<Unique Outlet Key>`
+Content-Type: application/json
+
+## Resources
+
+### Customers
+
+#### Index
+Request:
+```
+GET /customers{?name}{?email}{?phone}{?code}
+```
+
+Response:
+```
+{
+  "meta": <Meta>,
+  "data": [<Customer>]
+}
+```
+
+#### Show
+Request:
+```
+GET /customers/:id
+```
+
+Response: 200
+```
+<Customer>
+```
+
+#### Create
+Request:
+```
+POST /customers
+
+Body:
+<Customer>
+```
+
+Response: 201
+```
+<Customer>
+```
+
+#### Update
+Request:
+```
+PUT /customers/:id
+
+Body:
+<Customer>
+```
+
+Response: 200
+```
+<Customer>
+```
+
+#### Delete
+Request:
+```
+DELETE /customers/:id
+```
+
+Response: 200
+
+### Customer Operations
+
+#### Index
+Request:
+```
+GET /customers/:id/operations{?reason}{?info}{?createdFrom}{?createdTo}
+```
+
+Response:
+```
+{
+  "meta": <Meta>,
+  "data": [<Operation (includes outlet:Outlet)>]
+}
+```
+
+### Operations
+
+#### Index
+Request:
+```
+GET /operations{?reason}{?info}{?createdFrom}{?createdTo}
+```
+
+Response:
+```
+{
+  "meta": <Meta>,
+  "data": [<Operation (includes outlet:Outlet)>]
+}
+```
+
+#### Show
+Request:
+```
+GET /operations/:id
+```
+
+Response: 200
+```
+<Operation include Outlet>
+```
+
+#### Create
+Request:
+```
+POST /operations
+
+Body:
+<Operation>
+```
+
+Response: 201
+```
+<Operation (includes outlet:Outlet)>
+```

@@ -10,6 +10,8 @@ defmodule Bonus.Domain.Application do
 
     # Define workers and child supervisors to be supervised
     children = [
+      # Start the Ecto repository
+      supervisor(Bonus.Domain.Repo, []),
       # Starts a worker by calling: Bonus.Domain.Worker.start_link(arg1, arg2, arg3)
       # worker(Bonus.Domain.Worker, [arg1, arg2, arg3]),
     ]

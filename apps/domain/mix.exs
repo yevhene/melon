@@ -37,6 +37,7 @@ defmodule Bonus.Domain.Mixfile do
   #
   # Type "mix help deps" for more examples and options
   defp deps do
-    []
+    [{:postgrex, ">= 0.0.0"},
+     {:ecto, ">= 2.1.4"}]
   end
 end

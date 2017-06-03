@@ -29,18 +29,6 @@ config :outlet_api, Bonus.OutletAPI.Web.Endpoint,
 # configured to run both http and https servers on
 # different ports.
 
-# Do not include metadata nor timestamps in development logs
-config :logger, :console, format: "[$level] $message\n"
-
 # Set a higher stacktrace during development. Avoid configuring such
 # in production as building large stacktraces may be expensive.
 config :phoenix, :stacktrace_depth, 20
-
-# Configure your database
-config :outlet_api, Bonus.OutletAPI.Repo,
-  adapter: Ecto.Adapters.Postgres,
-  username: "postgres",
-  password: "postgres",
-  database: "outlet_api_dev",
-  hostname: "localhost",
-  pool_size: 10

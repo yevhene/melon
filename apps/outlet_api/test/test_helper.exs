@@ -1,4 +1,4 @@
 ExUnit.start()
 
-Ecto.Adapters.SQL.Sandbox.mode(Bonus.OutletAPI.Repo, :manual)
+Ecto.Adapters.SQL.Sandbox.mode(Bonus.Domain.Repo, :manual)
 

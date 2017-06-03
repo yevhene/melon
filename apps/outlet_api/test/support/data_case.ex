@@ -16,7 +16,7 @@ defmodule Bonus.OutletAPI.DataCase do
 
   using do
     quote do
-      alias Bonus.OutletAPI.Repo
+      alias Bonus.Domain.Repo
 
       import Ecto
       import Ecto.Changeset
@@ -26,10 +26,10 @@ defmodule Bonus.OutletAPI.DataCase do
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Bonus.OutletAPI.Repo)
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Bonus.Domain.Repo)
 
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(Bonus.OutletAPI.Repo, {:shared, self()})
+      Ecto.Adapters.SQL.Sandbox.mode(Bonus.Domain.Repo, {:shared, self()})
     end
 
     :ok
