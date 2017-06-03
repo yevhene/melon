@@ -63,14 +63,46 @@ Request:
 GET /users/:id
 ```
 
-Response:
+Response: 200
 ```
 <User>
 ```
 
 #### Create
+Request:
+```
+POST /users
+
+Body:
+<User>
+```
+
+Response: 201
+```
+<User>
+```
+
 #### Update
+Request:
+```
+PUT /users/:id
+
+Body:
+<User>
+```
+
+Response: 200
+```
+<User>
+```
+
 #### Delete
+Request:
+```
+DELETE /users/:id
+```
+
+Response: 200
 
 ### User Operations
 
