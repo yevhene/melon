@@ -19,7 +19,19 @@
   "name": "Vasyl Pupkin",
   "email": "user@example.com",
   "phone": "+380123456789",
-  "code": "0987654321"
+  "code": "0987654321",
+  "bonuses": 123
+}
+```
+
+### Operation
+```
+{
+  "id": 2,
+  "bonuses": -12,
+  "reason": "Info for user",
+  "info": "Info for trader",
+  "created_at": "1985-04-12T23:20:50.52Z"
 }
 ```
 
@@ -107,9 +119,56 @@ Response: 200
 ### User Operations
 
 #### Index
+Request:
+```
+GET /users/:id/operations{?reason}{?info}{?createdFrom}{?createdTo}
+```
+
+Response:
+```
+{
+  "meta": <Meta>,
+  "data": [<Operation>]
+}
+```
 
 ### Operations
 
 #### Index
+Request:
+```
+GET /operations{?reason}{?info}{?createdFrom}{?createdTo}
+```
+
+Response:
+```
+{
+  "meta": <Meta>,
+  "data": [<Operation>]
+}
+```
+
 #### Show
+Request:
+```
+GET /operations/:id
+```
+
+Response: 200
+```
+<Operation>
+```
+
 #### Create
+Request:
+```
+POST /operations
+
+Body:
+<Operation>
+```
+
+Response: 201
+```
+<Operation>
+```
