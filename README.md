@@ -180,5 +180,5 @@ Body:
 
 Response: 201
 ```
-<Operation>
+<Operation (includes outlet:Outlet)>
 ```
