@@ -12,7 +12,17 @@
 
 ## Entities
 
+### Outlet
+Shop or department
+```
+{
+  "name": "Rainbow Shop",
+  "address": "Soborna 75, 3"
+}
+```
+
 ### User
+User can obtain bonuses for each company
 ```
 {
   "id": 1,
@@ -128,7 +138,7 @@ Response:
 ```
 {
   "meta": <Meta>,
-  "data": [<Operation>]
+  "data": [<Operation include Outlet>]
 }
 ```
 
@@ -144,7 +154,7 @@ Response:
 ```
 {
   "meta": <Meta>,
-  "data": [<Operation>]
+  "data": [<Operation include Outlet>]
 }
 ```
 
@@ -156,7 +166,7 @@ GET /operations/:id
 
 Response: 200
 ```
-<Operation>
+<Operation include Outlet>
 ```
 
 #### Create
