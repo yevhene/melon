@@ -1,5 +1,5 @@
-defmodule Bonus.OutletAPI.Web.ErrorView do
-  use Bonus.OutletAPI.Web, :view
+defmodule Bonus.PointAPI.Web.ErrorView do
+  use Bonus.PointAPI.Web, :view
 
   def render("404.json", _assigns) do
     %{errors: %{detail: "Page not found"}}

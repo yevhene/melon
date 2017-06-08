@@ -1,14 +1,14 @@
-defmodule Bonus.OutletAPI.Web.Endpoint do
-  use Phoenix.Endpoint, otp_app: :outlet_api
+defmodule Bonus.PointAPI.Web.Endpoint do
+  use Phoenix.Endpoint, otp_app: :point_api
 
-  socket "/socket", Bonus.OutletAPI.Web.UserSocket
+  socket "/socket", Bonus.PointAPI.Web.UserSocket
 
   # Serve at "/" the static files from "priv/static" directory.
   #
   # You should set gzip to true if you are running phoenix.digest
   # when deploying your static files in production.
   plug Plug.Static,
-    at: "/", from: :outlet_api, gzip: false,
+    at: "/", from: :point_api, gzip: false,
     only: ~w(css fonts images js favicon.ico robots.txt)
 
   # Code reloading can be explicitly enabled under the
@@ -33,10 +33,10 @@ defmodule Bonus.OutletAPI.Web.Endpoint do
   # Set :encryption_salt if you would also like to encrypt it.
   plug Plug.Session,
     store: :cookie,
-    key: "_outlet_api_key",
+    key: "_point_api_key",
     signing_salt: "s7lTXEqk"
 
-  plug Bonus.OutletAPI.Web.Router
+  plug Bonus.PointAPI.Web.Router
 
   @doc """
   Dynamically loads configuration from the system environment

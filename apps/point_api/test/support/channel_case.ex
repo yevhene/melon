@@ -1,4 +1,4 @@
-defmodule Bonus.OutletAPI.Web.ChannelCase do
+defmodule Bonus.PointAPI.Web.ChannelCase do
   @moduledoc """
   This module defines the test case to be used by
   channel tests.
@@ -21,7 +21,7 @@ defmodule Bonus.OutletAPI.Web.ChannelCase do
       use Phoenix.ChannelTest
 
       # The default endpoint for testing
-      @endpoint Bonus.OutletAPI.Web.Endpoint
+      @endpoint Bonus.PointAPI.Web.Endpoint
     end
   end
 

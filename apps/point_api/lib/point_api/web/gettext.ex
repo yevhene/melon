@@ -1,11 +1,11 @@
-defmodule Bonus.OutletAPI.Web.Gettext do
+defmodule Bonus.PointAPI.Web.Gettext do
   @moduledoc """
   A module providing Internationalization with a gettext-based API.
 
   By using [Gettext](https://hexdocs.pm/gettext),
   your module gains a set of macros for translations, for example:
 
-      import Bonus.OutletAPI.Web.Gettext
+      import Bonus.PointAPI.Web.Gettext
 
       # Simple translation
       gettext "Here is the string to translate"
@@ -20,5 +20,5 @@ defmodule Bonus.OutletAPI.Web.Gettext do
 
   See the [Gettext Docs](https://hexdocs.pm/gettext) for detailed usage.
   """
-  use Gettext, otp_app: :outlet_api
+  use Gettext, otp_app: :point_api
 end

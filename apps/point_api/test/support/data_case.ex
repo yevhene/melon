@@ -1,4 +1,4 @@
-defmodule Bonus.OutletAPI.DataCase do
+defmodule Bonus.PointAPI.DataCase do
   @moduledoc """
   This module defines the setup for tests requiring
   access to the application's data layer.
@@ -21,7 +21,7 @@ defmodule Bonus.OutletAPI.DataCase do
       import Ecto
       import Ecto.Changeset
       import Ecto.Query
-      import Bonus.OutletAPI.DataCase
+      import Bonus.PointAPI.DataCase
     end
   end
 

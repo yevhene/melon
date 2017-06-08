@@ -1,4 +1,4 @@
-# Bonus.OutletAPI
+# Bonus.PointAPI
 
 ## Rules
 - All date/time fields formatted according to `RFC 3339`;
@@ -12,7 +12,7 @@
 
 ## Entities
 
-### Outlet
+### Point
 Shop or department
 ```
 {
@@ -58,7 +58,7 @@ Metainformation:
 
 ## Globals
 Each request should use this headers:
-X-Key: `<Unique Outlet Key>`
+X-Key: `<Unique Point Key>`
 Content-Type: application/json
 
 ## Resources
@@ -138,7 +138,7 @@ Response:
 ```
 {
   "meta": <Meta>,
-  "data": [<Operation (includes outlet:Outlet)>]
+  "data": [<Operation (includes point:Point)>]
 }
 ```
 
@@ -154,7 +154,7 @@ Response:
 ```
 {
   "meta": <Meta>,
-  "data": [<Operation (includes outlet:Outlet)>]
+  "data": [<Operation (includes point:Point)>]
 }
 ```
 
@@ -166,7 +166,7 @@ GET /operations/:id
 
 Response: 200
 ```
-<Operation include Outlet>
+<Operation include Point>
 ```
 
 #### Create
@@ -180,5 +180,5 @@ Body:
 
 Response: 201
 ```
-<Operation (includes outlet:Outlet)>
+<Operation (includes point:Point)>
 ```

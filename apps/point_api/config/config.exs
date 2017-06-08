@@ -6,16 +6,16 @@
 use Mix.Config
 
 # General application configuration
-config :outlet_api,
-  namespace: Bonus.OutletAPI,
+config :point_api,
+  namespace: Bonus.PointAPI,
   ecto_repos: []
 
 # Configures the endpoint
-config :outlet_api, Bonus.OutletAPI.Web.Endpoint,
+config :point_api, Bonus.PointAPI.Web.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "I/lQCtw/aLKjUguBf3Rg7tT9c7UOYoS+rlX0co33FPs7S9S7q8EwzDyx+Taulvwv",
-  render_errors: [view: Bonus.OutletAPI.Web.ErrorView, accepts: ~w(json)],
-  pubsub: [name: Bonus.OutletAPI.PubSub,
+  render_errors: [view: Bonus.PointAPI.Web.ErrorView, accepts: ~w(json)],
+  pubsub: [name: Bonus.PointAPI.PubSub,
            adapter: Phoenix.PubSub.PG2]
 
 # Configures Elixir's Logger

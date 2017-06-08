@@ -1,4 +1,4 @@
-defmodule Bonus.OutletAPI.Web.ConnCase do
+defmodule Bonus.PointAPI.Web.ConnCase do
   @moduledoc """
   This module defines the test case to be used by
   tests that require setting up a connection.
@@ -19,10 +19,10 @@ defmodule Bonus.OutletAPI.Web.ConnCase do
     quote do
       # Import conveniences for testing with connections
       use Phoenix.ConnTest
-      import Bonus.OutletAPI.Web.Router.Helpers
+      import Bonus.PointAPI.Web.Router.Helpers
 
       # The default endpoint for testing
-      @endpoint Bonus.OutletAPI.Web.Endpoint
+      @endpoint Bonus.PointAPI.Web.Endpoint
     end
   end
 
