@@ -7,15 +7,15 @@ use Mix.Config
 
 # General application configuration
 config :point_api,
-  namespace: Bonus.PointAPI,
+  namespace: Melon.PointAPI,
   ecto_repos: []
 
 # Configures the endpoint
-config :point_api, Bonus.PointAPI.Web.Endpoint,
+config :point_api, Melon.PointAPI.Web.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "I/lQCtw/aLKjUguBf3Rg7tT9c7UOYoS+rlX0co33FPs7S9S7q8EwzDyx+Taulvwv",
-  render_errors: [view: Bonus.PointAPI.Web.ErrorView, accepts: ~w(json)],
-  pubsub: [name: Bonus.PointAPI.PubSub,
+  render_errors: [view: Melon.PointAPI.Web.ErrorView, accepts: ~w(json)],
+  pubsub: [name: Melon.PointAPI.PubSub,
            adapter: Phoenix.PubSub.PG2]
 
 # Configures Elixir's Logger

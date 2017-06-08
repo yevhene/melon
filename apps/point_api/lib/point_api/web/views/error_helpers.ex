@@ -1,4 +1,4 @@
-defmodule Bonus.PointAPI.Web.ErrorHelpers do
+defmodule Melon.PointAPI.Web.ErrorHelpers do
   @moduledoc """
   Conveniences for translating and building error messages.
   """
@@ -21,9 +21,9 @@ defmodule Bonus.PointAPI.Web.ErrorHelpers do
     #     dgettext "errors", "is invalid"
     #
     if count = opts[:count] do
-      Gettext.dngettext(Bonus.PointAPI.Web.Gettext, "errors", msg, msg, count, opts)
+      Gettext.dngettext(Melon.PointAPI.Web.Gettext, "errors", msg, msg, count, opts)
     else
-      Gettext.dgettext(Bonus.PointAPI.Web.Gettext, "errors", msg, opts)
+      Gettext.dgettext(Melon.PointAPI.Web.Gettext, "errors", msg, opts)
     end
   end
 end

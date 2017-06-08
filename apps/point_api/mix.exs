@@ -1,4 +1,4 @@
-defmodule Bonus.PointAPI.Mixfile do
+defmodule Melon.PointAPI.Mixfile do
   use Mix.Project
 
   def project do
@@ -15,7 +15,7 @@ defmodule Bonus.PointAPI.Mixfile do
   #
   # Type `mix help compile.app` for more information.
   def application do
-    [mod: {Bonus.PointAPI.Application, []},
+    [mod: {Melon.PointAPI.Application, []},
      extra_applications: [:logger, :runtime_tools]]
   end
 

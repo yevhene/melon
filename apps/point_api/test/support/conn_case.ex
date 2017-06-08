@@ -1,4 +1,4 @@
-defmodule Bonus.PointAPI.Web.ConnCase do
+defmodule Melon.PointAPI.Web.ConnCase do
   @moduledoc """
   This module defines the test case to be used by
   tests that require setting up a connection.
@@ -19,18 +19,18 @@ defmodule Bonus.PointAPI.Web.ConnCase do
     quote do
       # Import conveniences for testing with connections
       use Phoenix.ConnTest
-      import Bonus.PointAPI.Web.Router.Helpers
+      import Melon.PointAPI.Web.Router.Helpers
 
       # The default endpoint for testing
-      @endpoint Bonus.PointAPI.Web.Endpoint
+      @endpoint Melon.PointAPI.Web.Endpoint
     end
   end
 
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Bonus.Domain.Repo)
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Melon.Domain.Repo)
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(Bonus.Domain.Repo, {:shared, self()})
+      Ecto.Adapters.SQL.Sandbox.mode(Melon.Domain.Repo, {:shared, self()})
     end
     {:ok, conn: Phoenix.ConnTest.build_conn()}
   end

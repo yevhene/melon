@@ -1,4 +1,4 @@
-defmodule Bonus.Domain.Repo do
+defmodule Melon.Domain.Repo do
   use Ecto.Repo, otp_app: :domain
 
   @doc """

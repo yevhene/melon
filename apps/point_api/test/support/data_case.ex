@@ -1,4 +1,4 @@
-defmodule Bonus.PointAPI.DataCase do
+defmodule Melon.PointAPI.DataCase do
   @moduledoc """
   This module defines the setup for tests requiring
   access to the application's data layer.
@@ -16,20 +16,20 @@ defmodule Bonus.PointAPI.DataCase do
 
   using do
     quote do
-      alias Bonus.Domain.Repo
+      alias Melon.Domain.Repo
 
       import Ecto
       import Ecto.Changeset
       import Ecto.Query
-      import Bonus.PointAPI.DataCase
+      import Melon.PointAPI.DataCase
     end
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Bonus.Domain.Repo)
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Melon.Domain.Repo)
 
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(Bonus.Domain.Repo, {:shared, self()})
+      Ecto.Adapters.SQL.Sandbox.mode(Melon.Domain.Repo, {:shared, self()})
     end
 
     :ok

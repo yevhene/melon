@@ -1,5 +1,5 @@
-defmodule Bonus.Domain do
+defmodule Melon.Domain do
   @moduledoc """
-  Documentation for Bonus.Domain.
+  Documentation for Melon.Domain.
   """
 end

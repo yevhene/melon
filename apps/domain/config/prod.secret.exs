@@ -10,7 +10,7 @@ use Mix.Config
 # or recreate for your teammates (or you later on).
 
 # Configure your database
-config :domain, Bonus.Domain.Repo,
+config :domain, Melon.Domain.Repo,
   adapter: Ecto.Adapters.Postgres,
   username: "postgres",
   password: "postgres",

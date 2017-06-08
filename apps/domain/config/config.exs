@@ -2,8 +2,8 @@ use Mix.Config
 
 # General application configuration
 config :domain,
-  namespace: Bonus.Domain,
-  ecto_repos: [Bonus.Domain.Repo]
+  namespace: Melon.Domain,
+  ecto_repos: [Melon.Domain.Repo]
 
 # Configures Elixir's Logger
 config :logger, :console,

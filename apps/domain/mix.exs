@@ -1,4 +1,4 @@
-defmodule Bonus.Domain.Mixfile do
+defmodule Melon.Domain.Mixfile do
   use Mix.Project
 
   def project do
@@ -20,7 +20,7 @@ defmodule Bonus.Domain.Mixfile do
   def application do
     # Specify extra applications you'll use from Erlang/Elixir
     [extra_applications: [:logger],
-     mod: {Bonus.Domain.Application, []}]
+     mod: {Melon.Domain.Application, []}]
   end
 
   # Dependencies can be Hex packages:

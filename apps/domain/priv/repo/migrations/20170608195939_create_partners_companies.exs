@@ -1,4 +1,4 @@
-defmodule Bonus.Domain.Repo.Migrations.CreatePartnersCompanies do
+defmodule Melon.Domain.Repo.Migrations.CreatePartnersCompanies do
   use Ecto.Migration
 
   def change do

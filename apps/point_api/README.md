@@ -1,4 +1,4 @@
-# Bonus.PointAPI
+# Melon.PointAPI
 
 ## Rules
 - All date/time fields formatted according to `RFC 3339`;
@@ -22,7 +22,7 @@ Shop or department
 ```
 
 ### Customer
-Customer can obtain bonuses for each company
+Customer can obtain melones for each company
 ```
 {
   "id": 1,
@@ -30,7 +30,7 @@ Customer can obtain bonuses for each company
   "email": "customer@example.com",
   "phone": "+380123456789",
   "code": "0987654321",
-  "bonuses": 123
+  "melones": 123
 }
 ```
 
@@ -38,7 +38,7 @@ Customer can obtain bonuses for each company
 ```
 {
   "id": 2,
-  "bonuses": -12,
+  "melones": -12,
   "reason": "Info for customer",
   "info": "Info for trader",
   "created_at": "1985-04-12T23:20:50.52Z"

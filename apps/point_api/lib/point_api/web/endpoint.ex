@@ -1,7 +1,7 @@
-defmodule Bonus.PointAPI.Web.Endpoint do
+defmodule Melon.PointAPI.Web.Endpoint do
   use Phoenix.Endpoint, otp_app: :point_api
 
-  socket "/socket", Bonus.PointAPI.Web.UserSocket
+  socket "/socket", Melon.PointAPI.Web.UserSocket
 
   # Serve at "/" the static files from "priv/static" directory.
   #
@@ -36,7 +36,7 @@ defmodule Bonus.PointAPI.Web.Endpoint do
     key: "_point_api_key",
     signing_salt: "s7lTXEqk"
 
-  plug Bonus.PointAPI.Web.Router
+  plug Melon.PointAPI.Web.Router
 
   @doc """
   Dynamically loads configuration from the system environment

@@ -1,4 +1,4 @@
-defmodule Bonus.Mixfile do
+defmodule Melon.Mixfile do
   use Mix.Project
 
   def project do

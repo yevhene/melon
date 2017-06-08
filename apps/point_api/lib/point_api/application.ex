@@ -1,4 +1,4 @@
-defmodule Bonus.PointAPI.Application do
+defmodule Melon.PointAPI.Application do
   use Application
 
   # See http://elixir-lang.org/docs/stable/elixir/Application.html
@@ -9,14 +9,14 @@ defmodule Bonus.PointAPI.Application do
     # Define workers and child supervisors to be supervised
     children = [
       # Start the endpoint when the application starts
-      supervisor(Bonus.PointAPI.Web.Endpoint, []),
-      # Start your own worker by calling: Bonus.PointAPI.Worker.start_link(arg1, arg2, arg3)
-      # worker(Bonus.PointAPI.Worker, [arg1, arg2, arg3]),
+      supervisor(Melon.PointAPI.Web.Endpoint, []),
+      # Start your own worker by calling: Melon.PointAPI.Worker.start_link(arg1, arg2, arg3)
+      # worker(Melon.PointAPI.Worker, [arg1, arg2, arg3]),
     ]
 
     # See http://elixir-lang.org/docs/stable/elixir/Supervisor.html
     # for other strategies and supported options
-    opts = [strategy: :one_for_one, name: Bonus.PointAPI.Supervisor]
+    opts = [strategy: :one_for_one, name: Melon.PointAPI.Supervisor]
     Supervisor.start_link(children, opts)
   end
 end

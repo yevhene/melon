@@ -1,4 +1,4 @@
-defmodule Bonus.PointAPI.Web.ChannelCase do
+defmodule Melon.PointAPI.Web.ChannelCase do
   @moduledoc """
   This module defines the test case to be used by
   channel tests.
@@ -21,15 +21,15 @@ defmodule Bonus.PointAPI.Web.ChannelCase do
       use Phoenix.ChannelTest
 
       # The default endpoint for testing
-      @endpoint Bonus.PointAPI.Web.Endpoint
+      @endpoint Melon.PointAPI.Web.Endpoint
     end
   end
 
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Bonus.Domain.Repo)
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Melon.Domain.Repo)
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(Bonus.Domain.Repo, {:shared, self()})
+      Ecto.Adapters.SQL.Sandbox.mode(Melon.Domain.Repo, {:shared, self()})
     end
     :ok
   end

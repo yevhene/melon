@@ -1,4 +1,4 @@
-defmodule Bonus.Domain.Partners.Company do
+defmodule Melon.Domain.Partners.Company do
   use Ecto.Schema
 
   schema "partners_company" do
