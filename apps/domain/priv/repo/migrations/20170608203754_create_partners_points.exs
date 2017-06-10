@@ -2,8 +2,11 @@ defmodule Melon.Domain.Repo.Migrations.CreatePartnersPoints do
   use Ecto.Migration
 
   def change do
+    Melon.Domain.Partners.Point.TypeEnum.create_type
+
     create table(:partners_points) do
       add :name, :text, null: false
+      add :type, :partners_points_type, null: false, default: "trade"
 
       add :description, :text
       add :address, :text
