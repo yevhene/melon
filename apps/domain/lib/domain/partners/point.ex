@@ -17,6 +17,8 @@ defmodule Melon.Domain.Partners.Point do
     belongs_to :company, Melon.Domain.Partners.Company
     belongs_to :program, Melon.Domain.Bonus.Program
 
+    has_many :keys, Melon.Domain.Partners.Key
+
     timestamps(type: :utc_datetime)
   end
 end
