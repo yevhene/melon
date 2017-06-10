@@ -6,16 +6,16 @@
 use Mix.Config
 
 # General application configuration
-config :point_api,
-  namespace: Melon.PointAPI,
+config :partners_api,
+  namespace: Melon.PartnersAPI,
   ecto_repos: []
 
 # Configures the endpoint
-config :point_api, Melon.PointAPI.Web.Endpoint,
+config :partners_api, Melon.PartnersAPI.Web.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "I/lQCtw/aLKjUguBf3Rg7tT9c7UOYoS+rlX0co33FPs7S9S7q8EwzDyx+Taulvwv",
-  render_errors: [view: Melon.PointAPI.Web.ErrorView, accepts: ~w(json)],
-  pubsub: [name: Melon.PointAPI.PubSub,
+  render_errors: [view: Melon.PartnersAPI.Web.ErrorView, accepts: ~w(json)],
+  pubsub: [name: Melon.PartnersAPI.PubSub,
            adapter: Phoenix.PubSub.PG2]
 
 # Configures Elixir's Logger

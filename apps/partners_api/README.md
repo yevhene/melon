@@ -1,4 +1,4 @@
-# Melon.PointAPI
+# Melon.PartnersAPI
 
 ## Rules
 - All date/time fields formatted according to `RFC 3339`;

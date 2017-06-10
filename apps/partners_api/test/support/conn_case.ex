@@ -1,4 +1,4 @@
-defmodule Melon.PointAPI.Web.ConnCase do
+defmodule Melon.PartnersAPI.Web.ConnCase do
   @moduledoc """
   This module defines the test case to be used by
   tests that require setting up a connection.
@@ -19,10 +19,10 @@ defmodule Melon.PointAPI.Web.ConnCase do
     quote do
       # Import conveniences for testing with connections
       use Phoenix.ConnTest
-      import Melon.PointAPI.Web.Router.Helpers
+      import Melon.PartnersAPI.Web.Router.Helpers
 
       # The default endpoint for testing
-      @endpoint Melon.PointAPI.Web.Endpoint
+      @endpoint Melon.PartnersAPI.Web.Endpoint
     end
   end
 

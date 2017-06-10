@@ -1,4 +1,4 @@
-defmodule Melon.PointAPI.DataCase do
+defmodule Melon.PartnersAPI.DataCase do
   @moduledoc """
   This module defines the setup for tests requiring
   access to the application's data layer.
@@ -21,7 +21,7 @@ defmodule Melon.PointAPI.DataCase do
       import Ecto
       import Ecto.Changeset
       import Ecto.Query
-      import Melon.PointAPI.DataCase
+      import Melon.PartnersAPI.DataCase
     end
   end
 
