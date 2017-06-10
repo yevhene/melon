@@ -14,12 +14,15 @@ defmodule Melon.PartnersAPI.Web.ConnCase do
   """
 
   use ExUnit.CaseTemplate
+  import Melon.Domain.Factory
 
   using do
     quote do
       # Import conveniences for testing with connections
       use Phoenix.ConnTest
+      import Melon.Domain.Factory
       import Melon.PartnersAPI.Web.Router.Helpers
+      import Melon.PartnersAPI.Json
 
       # The default endpoint for testing
       @endpoint Melon.PartnersAPI.Web.Endpoint
@@ -28,9 +31,23 @@ defmodule Melon.PartnersAPI.Web.ConnCase do
 
   setup tags do
     :ok = Ecto.Adapters.SQL.Sandbox.checkout(Melon.Domain.Repo)
+
     unless tags[:async] do
       Ecto.Adapters.SQL.Sandbox.mode(Melon.Domain.Repo, {:shared, self()})
     end
-    {:ok, conn: Phoenix.ConnTest.build_conn()}
+
+    conn = Phoenix.ConnTest.build_conn()
+    params = [conn: conn]
+
+    params = if tags[:unauthorized], do: params, else: authorize(params)
+
+    {:ok, params}
+  end
+
+  defp authorize(params) do
+    key = insert(:key)
+    conn = params[:conn] |>
+      Plug.Conn.put_req_header("authorization", "Bearer #{key.token}")
+    params |> Keyword.merge([conn: conn, key: key, realm: key.point.realm])
   end
 end

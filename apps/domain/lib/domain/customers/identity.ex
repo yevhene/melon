@@ -10,6 +10,7 @@ defmodule Melon.Domain.Customers.Identity do
 
     belongs_to :account, Melon.Domain.Customers.Account
 
+    has_many :cards, Melon.Domain.Customers.Card
     has_many :phones, Melon.Domain.Customers.Phone
 
     timestamps(type: :utc_datetime)

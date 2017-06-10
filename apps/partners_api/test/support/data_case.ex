@@ -22,6 +22,7 @@ defmodule Melon.PartnersAPI.DataCase do
       import Ecto.Changeset
       import Ecto.Query
       import Melon.PartnersAPI.DataCase
+      import Melon.Domain.Factory
     end
   end
 

@@ -43,6 +43,15 @@ defmodule Melon.Domain.Factory do
     }
   end
 
+  def with_identities(%Account{} = account) do
+    identities = :identity
+      |> insert_pair(account: account)
+      |> Enum.map(&with_cards(&1))
+      |> Enum.map(&with_phones(&1))
+
+    account |> Map.put(:identities, identities)
+  end
+
   def identity_factory do
     %Identity{
       name: Faker.Name.name,
@@ -52,6 +61,16 @@ defmodule Melon.Domain.Factory do
       comment: Faker.Lorem.Shakespeare.hamlet,
       account: build(:account)
     }
+  end
+
+  def with_cards(%Identity{} = identity) do
+    cards = insert_pair(:card, identity: identity)
+    identity |> Map.put(:cards, cards)
+  end
+
+  def with_phones(%Identity{} = identity) do
+    phones = insert_pair(:phone, identity: identity)
+    identity |> Map.put(:phones, phones)
   end
 
   def card_factory do
@@ -82,7 +101,8 @@ defmodule Melon.Domain.Factory do
   def key_factory do
     %Key{
       token: Key.generate_token,
-      point: build(:point)
+      point: build(:point),
+      expired_at: NaiveDateTime.utc_now |> NaiveDateTime.add(60 * 60 * 24 * 365)
     }
   end
 end

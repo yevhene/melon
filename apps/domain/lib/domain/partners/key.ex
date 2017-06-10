@@ -3,7 +3,7 @@ defmodule Melon.Domain.Partners.Key do
 
   schema "partners_keys" do
     field :token, :string
-    field :expired_at, :boolean
+    field :expired_at, :utc_datetime
 
     belongs_to :point, Melon.Domain.Partners.Point
 
