@@ -3,11 +3,11 @@ defmodule Melon.Domain.Repo.Migrations.CreateCustomersAccounts do
 
   def change do
     create table(:customers_accounts) do
-      add :program_id, references(:bonus_programs), null: false
+      add :realm_id, references(:bonus_realms), null: false
 
       timestamps(type: :utc_datetime)
     end
 
-    create index(:customers_accounts, [:program_id])
+    create index(:customers_accounts, [:realm_id])
   end
 end

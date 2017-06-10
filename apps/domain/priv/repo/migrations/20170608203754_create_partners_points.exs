@@ -14,14 +14,14 @@ defmodule Melon.Domain.Repo.Migrations.CreatePartnersPoints do
       add :longitude, :float
 
       add :company_id, references(:partners_companies), null: false
-      add :program_id, references(:bonus_programs), null: false
+      add :realm_id, references(:bonus_realms), null: false
 
       timestamps(type: :utc_datetime)
     end
 
     create index(:partners_points, [:company_id])
-    create index(:partners_points, [:program_id])
-    create index(:partners_points, [:name, :company_id, :program_id],
+    create index(:partners_points, [:realm_id])
+    create index(:partners_points, [:name, :company_id, :realm_id],
       unique: true)
   end
 end

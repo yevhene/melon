@@ -1,7 +1,7 @@
-defmodule Melon.Domain.Bonus.Program do
+defmodule Melon.Domain.Bonus.Realm do
   use Ecto.Schema
 
-  schema "bonus_programs" do
+  schema "bonus_realms" do
     field :name, :string
 
     belongs_to :company, Melon.Domain.Partners.Company

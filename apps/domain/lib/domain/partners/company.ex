@@ -5,7 +5,7 @@ defmodule Melon.Domain.Partners.Company do
     field :name, :string
 
     has_many :points, Melon.Domain.Partners.Point
-    has_many :programs, Melon.Domain.Bonus.Program
+    has_many :realms, Melon.Domain.Bonus.Realm
 
     timestamps(type: :utc_datetime)
   end

@@ -1,8 +1,8 @@
-defmodule Melon.Domain.Repo.Migrations.CreateBonusPrograms do
+defmodule Melon.Domain.Repo.Migrations.CreateBonusRealms do
   use Ecto.Migration
 
   def change do
-    create table(:bonus_programs) do
+    create table(:bonus_realms) do
       add :name, :text
 
       add :company_id, references(:partners_companies), null: false
@@ -10,6 +10,6 @@ defmodule Melon.Domain.Repo.Migrations.CreateBonusPrograms do
       timestamps(type: :utc_datetime)
     end
 
-    create index(:bonus_programs, [:company_id])
+    create index(:bonus_realms, [:company_id])
   end
 end

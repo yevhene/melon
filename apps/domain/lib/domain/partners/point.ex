@@ -15,7 +15,7 @@ defmodule Melon.Domain.Partners.Point do
     field :longitude, :float
 
     belongs_to :company, Melon.Domain.Partners.Company
-    belongs_to :program, Melon.Domain.Bonus.Program
+    belongs_to :realm, Melon.Domain.Bonus.Realm
 
     has_many :keys, Melon.Domain.Partners.Key
 
