@@ -6,7 +6,8 @@ defmodule Melon.Mixfile do
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
      aliases: aliases(),
-     deps: deps()]
+     deps: deps(),
+     test_coverage: [tool: ExCoveralls]]
   end
 
   # Dependencies can be Hex packages:
@@ -22,7 +23,8 @@ defmodule Melon.Mixfile do
   # Dependencies listed here are available only for this project
   # and cannot be accessed from applications inside the apps folder
   defp deps do
-    []
+    [{:excoveralls, "~> 0.7", only: :test},
+     {:junit_formatter, "~> 1.3", only: :test}]
   end
 
   # Aliases are shortcuts or tasks specific to the current project.
