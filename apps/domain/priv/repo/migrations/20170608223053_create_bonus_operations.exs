@@ -4,7 +4,7 @@ defmodule Melon.Domain.Repo.Migrations.CreateBonusOperations do
   def change do
     create table(:bonus_operations) do
       add :value, :integer, null: false
-      add :posted_at, :utc_datetime, null: false,
+      add :activated_at, :utc_datetime, null: false,
         default: fragment("CURRENT_TIMESTAMP")
 
       add :account_id, references(:customers_accounts), null: false
