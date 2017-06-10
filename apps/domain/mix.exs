@@ -9,6 +9,7 @@ defmodule Melon.Domain.Mixfile do
      deps_path: "../../deps",
      lockfile: "../../mix.lock",
      elixir: "~> 1.4",
+     elixirc_paths: elixirc_paths(Mix.env),
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
      deps: deps()]
@@ -22,6 +23,10 @@ defmodule Melon.Domain.Mixfile do
     [extra_applications: [:logger],
      mod: {Melon.Domain.Application, []}]
   end
+
+  # Specifies which paths to compile per environment.
+  defp elixirc_paths(:test), do: ["lib", "test/support"]
+  defp elixirc_paths(_),     do: ["lib"]
 
   # Dependencies can be Hex packages:
   #
@@ -39,6 +44,8 @@ defmodule Melon.Domain.Mixfile do
   defp deps do
     [{:postgrex, ">= 0.0.0"},
      {:ecto, ">= 2.1.4"},
-     {:ecto_enum, "~> 1.0"}]
+     {:ecto_enum, "~> 1.0"},
+     {:ex_machina, "~> 2.0", only: :test},
+     {:faker, "~> 0.8", only: :test}]
   end
 end

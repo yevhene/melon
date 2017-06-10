@@ -1,11 +1,10 @@
-defmodule Melon.PartnersAPI.Web.ChannelCase do
+defmodule Melon.Domain.DataCase do
   @moduledoc """
-  This module defines the test case to be used by
-  channel tests.
+  This module defines the setup for tests requiring
+  access to the application's data layer.
 
-  Such tests rely on `Phoenix.ChannelTest` and also
-  import other functionality to make it easier
-  to build common datastructures and query the data layer.
+  You may define functions here to be used as helpers in
+  your tests.
 
   Finally, if the test case interacts with the database,
   it cannot be async. For this reason, every test runs
@@ -17,21 +16,21 @@ defmodule Melon.PartnersAPI.Web.ChannelCase do
 
   using do
     quote do
-      # Import conveniences for testing with channels
-      use Phoenix.ChannelTest
+      alias Melon.Domain.Repo
 
-      # The default endpoint for testing
-      @endpoint Melon.PartnersAPI.Web.Endpoint
+      import Ecto
+      import Melon.Domain.DataCase
+      import Melon.Domain.Factory
     end
   end
-
 
   setup tags do
     :ok = Ecto.Adapters.SQL.Sandbox.checkout(Melon.Domain.Repo)
+
     unless tags[:async] do
       Ecto.Adapters.SQL.Sandbox.mode(Melon.Domain.Repo, {:shared, self()})
     end
+
     :ok
   end
-
 end

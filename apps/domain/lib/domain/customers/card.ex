@@ -1,7 +1,7 @@
 defmodule Melon.Domain.Customers.Card do
   use Ecto.Schema
 
-  schema "accounts_cards" do
+  schema "customers_cards" do
     field :number, :string
     field :is_active, :boolean
 

@@ -7,7 +7,7 @@ defmodule Melon.Domain.Repo.Migrations.CreatePartnersKeys do
       add :expired_at, :utc_datetime, null: false,
         default: fragment("CURRENT_TIMESTAMP + interval '1 year'")
 
-      add :point_id, references(:partners_keys), null: false
+      add :point_id, references(:partners_points), null: false
 
       timestamps(type: :utc_datetime)
     end

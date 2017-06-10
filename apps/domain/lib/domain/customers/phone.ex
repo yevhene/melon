@@ -1,7 +1,7 @@
 defmodule Melon.Domain.Customers.Phone do
   use Ecto.Schema
 
-  schema "accounts_phones" do
+  schema "customers_phones" do
     field :number, :string
     field :is_active, :boolean
 

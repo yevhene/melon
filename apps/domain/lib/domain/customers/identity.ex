@@ -1,7 +1,7 @@
 defmodule Melon.Domain.Customers.Identity do
   use Ecto.Schema
 
-  schema "customers_identity" do
+  schema "customers_identities" do
     field :name, :string
     field :email, :string
     field :address, :string

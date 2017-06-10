@@ -1,7 +1,7 @@
 defmodule Melon.Domain.Partners.Company do
   use Ecto.Schema
 
-  schema "partners_company" do
+  schema "partners_companies" do
     field :name, :string
 
     has_many :points, Melon.Domain.Partners.Point

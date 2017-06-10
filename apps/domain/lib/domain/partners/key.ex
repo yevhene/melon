@@ -9,4 +9,10 @@ defmodule Melon.Domain.Partners.Key do
 
     timestamps(type: :utc_datetime)
   end
+
+  def generate_token(length \\ 64) do
+    :crypto.strong_rand_bytes(length)
+    |> Base.url_encode64
+    |> binary_part(0, length)
+  end
 end

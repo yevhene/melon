@@ -6,7 +6,7 @@ defmodule Melon.Domain.Repo.Migrations.CreateCustomersPhones do
       add :number, :text, null: false
       add :is_active, :boolean, null: false, default: true
 
-      add :identity_id, references(:customers_identites), null: false
+      add :identity_id, references(:customers_identities), null: false
 
       timestamps(type: :utc_datetime)
     end

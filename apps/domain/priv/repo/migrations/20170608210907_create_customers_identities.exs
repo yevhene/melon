@@ -2,7 +2,7 @@ defmodule Melon.Domain.Repo.Migrations.CreateCustomersIdentities do
   use Ecto.Migration
 
   def change do
-    create table(:customers_identites) do
+    create table(:customers_identities) do
       add :name, :text, null: false
       add :email, :text
       add :address, :text
@@ -14,7 +14,7 @@ defmodule Melon.Domain.Repo.Migrations.CreateCustomersIdentities do
       timestamps(type: :utc_datetime)
     end
 
-    create index(:customers_identites, [:name, :account_id], unique: true)
-    create index(:customers_identites, [:account_id])
+    create index(:customers_identities, [:name, :account_id], unique: true)
+    create index(:customers_identities, [:account_id])
   end
 end
