@@ -24,7 +24,8 @@ defmodule Melon.Mixfile do
   # and cannot be accessed from applications inside the apps folder
   defp deps do
     [{:excoveralls, "~> 0.7", only: :test},
-     {:junit_formatter, "~> 1.3", only: :test}]
+     {:junit_formatter, "~> 1.3", only: :test},
+     {:credo, "~> 0.8", only: [:dev, :test], runtime: false}]
   end
 
   # Aliases are shortcuts or tasks specific to the current project.

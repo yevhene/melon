@@ -12,7 +12,8 @@ defmodule Melon.Domain.Application do
     children = [
       # Start the Ecto repository
       supervisor(Melon.Domain.Repo, []),
-      # Starts a worker by calling: Melon.Domain.Worker.start_link(arg1, arg2, arg3)
+      # Starts a worker by calling:
+      # Melon.Domain.Worker.start_link(arg1, arg2, arg3)
       # worker(Melon.Domain.Worker, [arg1, arg2, arg3]),
     ]
 
