@@ -3,7 +3,7 @@ defmodule Melon.Domain.Partners.Key do
 
   schema "partners_keys" do
     field :token, :string
-    field :expired_at, :boolean
+    field :expired_at, :utc_datetime
 
     belongs_to :point, Melon.Domain.Partners.Point
 
@@ -11,7 +11,8 @@ defmodule Melon.Domain.Partners.Key do
   end
 
   def generate_token(length \\ 64) do
-    :crypto.strong_rand_bytes(length)
+    length
+    |> :crypto.strong_rand_bytes
     |> Base.url_encode64
     |> binary_part(0, length)
   end

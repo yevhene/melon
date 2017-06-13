@@ -45,6 +45,10 @@ jobs:
           command: mix ecto.setup
 
       - run:
+          name: Lint
+          command: mix credo
+
+      - run:
           name: Test
           command: mix coveralls.html --umbrella
 
