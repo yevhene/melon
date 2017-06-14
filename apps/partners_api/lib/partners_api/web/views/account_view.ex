@@ -1,8 +1,8 @@
-defmodule Melon.PartnersAPI.Web.Customers.AccountView do
+defmodule Melon.PartnersAPI.Web.AccountView do
   use Melon.PartnersAPI.Web, :view
 
-  alias Melon.PartnersAPI.Web.Customers.AccountView
-  alias Melon.PartnersAPI.Web.Customers.IdentityView
+  alias Melon.PartnersAPI.Web.AccountView
+  alias Melon.PartnersAPI.Web.IdentityView
 
   def render("index.json", %{accounts: accounts}) do
     %{data: render_many(accounts, AccountView, "account.json")}

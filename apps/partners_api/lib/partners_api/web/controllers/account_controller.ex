@@ -1,4 +1,4 @@
-defmodule Melon.PartnersAPI.Web.Customers.AccountController do
+defmodule Melon.PartnersAPI.Web.AccountController do
   use Melon.PartnersAPI.Web, :controller
 
   alias Melon.PartnersAPI.Customers

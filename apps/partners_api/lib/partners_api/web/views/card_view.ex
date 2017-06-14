@@ -1,11 +1,7 @@
-defmodule Melon.PartnersAPI.Web.Customers.CardView do
+defmodule Melon.PartnersAPI.Web.CardView do
   use Melon.PartnersAPI.Web, :view
 
-  alias Melon.PartnersAPI.Web.Customers.CardView
-
-  def render("show.json", %{card: card}) do
-    render_one(card, CardView, "card.json")
-  end
+  alias Melon.PartnersAPI.Web.CardView
 
   def render("card.json", %{card: card}) do
     %{id: card.id,

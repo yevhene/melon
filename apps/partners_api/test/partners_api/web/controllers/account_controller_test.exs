@@ -1,7 +1,7 @@
-defmodule Melon.PartnersAPI.Web.Customers.AccountControllerTest do
+defmodule Melon.PartnersAPI.Web.AccountControllerTest do
   use Melon.PartnersAPI.Web.ConnCase
 
-  alias Melon.PartnersAPI.Web.Customers.AccountView
+  alias Melon.PartnersAPI.Web.AccountView
 
   setup %{conn: conn} do
     {:ok, conn: put_req_header(conn, "accept", "application/json")}
@@ -19,7 +19,7 @@ defmodule Melon.PartnersAPI.Web.Customers.AccountControllerTest do
     end
 
     test "lists all entries on index", %{conn: conn, accounts: accounts} do
-      conn = get conn, customers_account_path(conn, :index)
+      conn = get conn, account_path(conn, :index)
 
       assert json_response(conn, 200) ==
         render_json(AccountView, "index.json", accounts: accounts)

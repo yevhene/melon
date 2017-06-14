@@ -1,20 +1,14 @@
-defmodule Melon.PartnersAPI.Web.Customers.AccountViewTest do
+defmodule Melon.PartnersAPI.Web.AccountViewTest do
   use Melon.PartnersAPI.Web.ConnCase, async: true
 
   import Phoenix.View
 
-  alias Melon.PartnersAPI.Web.Customers.AccountView
-  alias Melon.PartnersAPI.Web.Customers.IdentityView
+  alias Melon.PartnersAPI.Web.AccountView
+  alias Melon.PartnersAPI.Web.IdentityView
 
   setup do
     account = :account |> insert |> with_identities
-
     {:ok, account: account}
-  end
-
-  test "render index.json", %{account: account} do
-    assert render(AccountView, "index.json", %{accounts: [account]}) == %{
-      data: [render(AccountView, "account.json", %{account: account})]}
   end
 
   test "render account.json", %{account: account} do

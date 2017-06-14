@@ -1,21 +1,15 @@
-defmodule Melon.PartnersAPI.Web.Customers.IdentityViewTest do
+defmodule Melon.PartnersAPI.Web.IdentityViewTest do
   use Melon.PartnersAPI.Web.ConnCase, async: true
 
   import Phoenix.View
 
-  alias Melon.PartnersAPI.Web.Customers.CardView
-  alias Melon.PartnersAPI.Web.Customers.IdentityView
-  alias Melon.PartnersAPI.Web.Customers.PhoneView
+  alias Melon.PartnersAPI.Web.CardView
+  alias Melon.PartnersAPI.Web.IdentityView
+  alias Melon.PartnersAPI.Web.PhoneView
 
   setup do
     identity = :identity |> insert |> with_cards |> with_phones
-
     {:ok, identity: identity}
-  end
-
-  test "render show.json", %{identity: identity} do
-    assert render(IdentityView, "show.json", %{identity: identity}) ==
-      render(IdentityView, "identity.json", %{identity: identity})
   end
 
   test "render identity.json", %{identity: identity} do
