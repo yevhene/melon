@@ -1,11 +1,7 @@
-defmodule Melon.PartnersAPI.Web.Customers.PhoneView do
+defmodule Melon.PartnersAPI.Web.PhoneView do
   use Melon.PartnersAPI.Web, :view
 
-  alias Melon.PartnersAPI.Web.Customers.PhoneView
-
-  def render("show.json", %{phone: phone}) do
-    render_one(phone, PhoneView, "phone.json")
-  end
+  alias Melon.PartnersAPI.Web.PhoneView
 
   def render("phone.json", %{phone: phone}) do
     %{id: phone.id,

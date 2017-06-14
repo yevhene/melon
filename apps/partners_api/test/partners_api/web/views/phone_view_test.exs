@@ -1,18 +1,13 @@
-defmodule Melon.PartnersAPI.Web.Customers.PhoneViewTest do
+defmodule Melon.PartnersAPI.Web.PhoneViewTest do
   use Melon.PartnersAPI.Web.ConnCase, async: true
 
   import Phoenix.View
 
-  alias Melon.PartnersAPI.Web.Customers.PhoneView
+  alias Melon.PartnersAPI.Web.PhoneView
 
   setup do
     phone = insert(:phone)
     {:ok, phone: phone}
-  end
-
-  test "render show.json", %{phone: phone} do
-    assert render(PhoneView, "show.json", %{phone: phone}) ==
-      render(PhoneView, "phone.json", %{phone: phone})
   end
 
   test "render phone.json", %{phone: phone} do

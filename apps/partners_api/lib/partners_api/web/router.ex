@@ -9,7 +9,7 @@ defmodule Melon.PartnersAPI.Web.Router do
     plug Melon.PartnersAPI.Web.AuthenticatePlug
   end
 
-  scope "/", Melon.PartnersAPI.Web.Customers, as: :customers do
+  scope "/", Melon.PartnersAPI.Web do
     pipe_through [:api, :auth]
 
     resources "/accounts", AccountController, only: [:index]

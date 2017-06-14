@@ -1,13 +1,9 @@
-defmodule Melon.PartnersAPI.Web.Customers.IdentityView do
+defmodule Melon.PartnersAPI.Web.IdentityView do
   use Melon.PartnersAPI.Web, :view
 
-  alias Melon.PartnersAPI.Web.Customers.IdentityView
-  alias Melon.PartnersAPI.Web.Customers.CardView
-  alias Melon.PartnersAPI.Web.Customers.PhoneView
-
-  def render("show.json", %{identity: identity}) do
-    render_one(identity, IdentityView, "identity.json")
-  end
+  alias Melon.PartnersAPI.Web.IdentityView
+  alias Melon.PartnersAPI.Web.CardView
+  alias Melon.PartnersAPI.Web.PhoneView
 
   def render("identity.json", %{identity: identity}) do
     %{id: identity.id,
