@@ -12,6 +12,12 @@ defmodule Melon.PartnersAPI.Customers do
     |> Repo.preload(identities: [:cards, :phones])
   end
 
+  def get_account!(id, %Realm{} = realm) do
+    Account
+    |> scope(realm)
+    |> Repo.get!(id)
+  end
+
   defp scope(model, %Realm{} = realm) do
     model
     |> where([a], ^realm.id == a.realm_id)
