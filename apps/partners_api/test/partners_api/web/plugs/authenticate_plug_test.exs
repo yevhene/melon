@@ -12,7 +12,6 @@ defmodule Melon.PartnersAPI.Web.AuthenticatePlugTest do
 
     assert conn.status != 401
     assert conn.assigns.key != nil
-    assert conn.assigns.realm != nil
   end
 
   test "user not passed if no token present" do

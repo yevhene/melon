@@ -6,7 +6,9 @@ defmodule Melon.PartnersAPI.Web.AccountController do
   action_fallback Hourly.Web.FallbackController
 
   def index(conn, _params) do
-    accounts = Customers.list_accounts(conn.assigns.realm)
+    realm = conn.assigns.key.point.realm
+    accounts = Customers.list_accounts(realm)
+
     render(conn, "index.json", accounts: accounts)
   end
 end

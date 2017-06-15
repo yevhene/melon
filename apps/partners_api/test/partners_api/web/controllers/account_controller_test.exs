@@ -19,7 +19,9 @@ defmodule Melon.PartnersAPI.Web.AccountControllerTest do
     end
 
     test "lists all entries on index", %{conn: conn, accounts: accounts} do
-      conn = get conn, account_path(conn, :index)
+      conn = conn
+      |> get(account_path(conn, :index))
+      |> doc
 
       assert json_response(conn, 200) ==
         render_json(AccountView, "index.json", accounts: accounts)

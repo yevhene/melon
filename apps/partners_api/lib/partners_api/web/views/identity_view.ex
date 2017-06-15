@@ -1,7 +1,6 @@
 defmodule Melon.PartnersAPI.Web.IdentityView do
   use Melon.PartnersAPI.Web, :view
 
-  alias Melon.PartnersAPI.Web.IdentityView
   alias Melon.PartnersAPI.Web.CardView
   alias Melon.PartnersAPI.Web.PhoneView
 

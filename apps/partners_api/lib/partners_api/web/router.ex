@@ -12,6 +12,9 @@ defmodule Melon.PartnersAPI.Web.Router do
   scope "/", Melon.PartnersAPI.Web do
     pipe_through [:api, :auth]
 
-    resources "/accounts", AccountController, only: [:index]
+    resources "/accounts", AccountController, only: [:index] do
+      resources "/operations", OperationController,
+        only: [:index, :show, :create]
+    end
   end
 end

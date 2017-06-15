@@ -13,9 +13,7 @@ defmodule Melon.PartnersAPI.Web.AuthenticatePlug do
         key = Partners.get_key(token)
 
         if key do
-          conn
-          |> assign(:key, key)
-          |> assign(:realm, key.point.realm)
+          conn |> assign(:key, key)
         else
           raise Melon.PartnersAPI.UnauthrorizedError
         end
